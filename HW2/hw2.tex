@@ -1,0 +1,228 @@
+\documentclass[a4paper]{article}
+\usepackage{tikz}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{paralist}
+\usepackage{epstopdf}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyvrb}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{float}
+\usepackage{paralist}
+%\usepackage[svgname]{xcolor}
+\usepackage{enumerate}
+\usepackage{array}
+\usepackage{times}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{comment}
+\usepackage{environ}
+\usepackage{times}
+\usepackage{textcomp}
+\usepackage{caption}
+\usepackage{bbm}
+
+
+\urlstyle{rm}
+
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[]
+\newtheorem{conjecture}{Conjecture}[]
+\newtheorem{example}{Example}[]
+\newtheorem{theorem}{Theorem}[]
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+\floatname{algorithm}{Procedure}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\newcommand{\abs}[1]{\lvert#1\rvert}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\Nat}{\mathbb{N}}
+\newcommand{\br}[1]{\{#1\}}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\definecolor{C0}{HTML}{1F77B4}
+\definecolor{C1}{HTML}{FF7F0E}
+\definecolor{C2}{HTML}{2ca02c}
+\definecolor{C3}{HTML}{d62728}
+\definecolor{C4}{HTML}{9467bd}
+\definecolor{C5}{HTML}{8c564b}
+\definecolor{C6}{HTML}{e377c2}
+\definecolor{C7}{HTML}{7F7F7F}
+\definecolor{C8}{HTML}{bcbd22}
+\definecolor{C9}{HTML}{17BECF}
+
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\sgn}{\mathrm{sgn}}
+
+\newcommand{\vc}[1]{\boldsymbol{#1}}
+\newcommand{\xv}{\vc{x}}
+\newcommand{\Sigmav}{\vc{\Sigma}}
+\newcommand{\alphav}{\vc{\alpha}}
+\newcommand{\muv}{\vc{\mu}}
+
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+\def\x{\mathbf x}
+\def\y{\mathbf y}
+\def\w{\mathbf w}
+\def\v{\mathbf v}
+\def\E{\mathbb E}
+\def\R{\mathbb R}
+\def\V{\mathbb V}
+\def\ind{\mathbbm 1}
+
+\renewcommand\vec[1]{\mathbf{#1}}
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\calN}{{\cal N}}
+\newcommand{\calL}{{\cal L}}
+\newcommand{\la}{\langle}
+\newcommand{\ra}{\rangle}
+\newcommand{\Ex}{\mathop{{\bf E}\/}}
+\newcommand{\opt}{\mathrm{OPT}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\LR}{\mathrm{LeakyRelu}}
+\newcommand{\Ind}{\mathds{1}}
+\newcommand{\1}{\Ind}
+\newcommand{\matr}{\vec}
+\newcommand{\littleint}{\mathop{\textstyle \int}}
+\newcommand{\littlesum}{\mathop{\textstyle \sum}}
+\newcommand{\littleprod}{\mathop{\textstyle \prod}}
+\newcommand{\ba}{\mathbf{a}}
+\newcommand{\bb}{\mathbf{b}}
+\newcommand{\be}{\mathbf{e}}
+\newcommand{\bi}{\mathbf{i}}
+\newcommand{\bj}{\mathbf{j}}
+\newcommand{\wt}{\widetilde}
+\newcommand{\wh}{\widehat}
+
+
+\newcommand{\ltwo}[1]{\left\lVert#1\right\rVert_2}
+\newcommand{\miscl}{\err_{0-1}^{\D}}
+\newcommand{\wstar}{\bw^{\ast}}
+\DeclareMathOperator\erf{erf}
+
+\newcommand{\ith}{^{(i)}}
+\newcommand{\tth}{^{(t)}}
+\newcommand{\Exx}{\E_{\x\sim \D_\x}}
+\newcommand{\Ey}{\E_{(\x,y)\sim \D}}
+
+
+% TO SHOW SOLUTIONS, include following (else comment out):
+\newenvironment{soln}{
+    \leavevmode\color{blue}\ignorespaces
+}{}
+
+
+\hypersetup{
+%    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\geometry{
+  top=1in,            % <-- you want to adjust this
+  inner=1in,
+  outer=1in,
+  bottom=1in,
+  headheight=3em,       % <-- and this
+  headsep=2em,          % <-- and this
+  footskip=3em,
+}
+
+
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{Homework 2}}
+\rhead{\fancyplain{}{CS 760 Machine Learning}}
+\cfoot{\thepage}
+
+\title{\textsc{Homework 2}} % Title
+
+%%% NOTE:  Replace 'NAME HERE' etc., and delete any "\red{}" wrappers (so it won't show up as red)
+
+\author{
+\red{$>>$NAME HERE$<<$} \\
+\red{$>>$WISC ID HERE$<<$}\\
+} 
+
+\date{}
+
+\begin{document}
+
+\maketitle 
+
+\section{Questions}
+\begin{enumerate}
+    \item  (Our algorithm stops at pure labels) [5 pts] If a node is not empty but contains training items with the same label, why is it guaranteed to become a leaf? Explain. You may assume that the feature values of these items are not all the same. 
+\item (Our algorithm is greedy) [5 pts] Handcraft a small training set where both classes are present but the algorithm refuses to split; instead it makes the root a leaf and stops. Importantly, if we were to manually force a split, the algorithm will happily continue splitting the data set further and produce a deeper tree with zero training error. You should (1) plot your training set, (2) explain why. (Hint: you don't need more than a handful of items.) 
+\item (Gain ratio exercise) [10 pts] Use the training set {\tt Druns.txt}. For the root node, list all candidate cuts and their information gain ratio. If the entropy of the candidate split is zero, please list its mutual information (i.e., information gain). 
+
+(Hint: to get $\log_2(x)$ when your programming language may be using a different base, use $\log(x)/\log(2)$. Also, please follow the split rule in the first section.)
+
+
+\item (The king of interpretability) [10 pts] Decision trees are not the most accurate classifiers in general. However, they are useful, largely due to their interpretability: a data scientist can easily explain a tree to a non-data scientist. Build a tree from {\tt D3leaves.txt}. Then manually convert your tree to a set of logic rules. Show the tree
+\footnote{When we say show the tree, we mean either the standard computer science tree view, or some crude plain-text representation of the tree – as long as you explain the format. When we say visualize the tree, we mean a plot in the 2D x space that shows how the tree will classify any points. } and the rules. 
+\item (Or is it?) [20 pts] For this question only, make sure you DO NOT VISUALIZE the datasets or plot your tree’s decision boundary in the 2D $\x$ space. If your code does that, turn it off before proceeding. This is because you want to see your own reaction when trying to interpret a tree. You will get points no matter what your interpretation is. And we will ask you to visualize them in the next question anyway. 
+\begin{itemize}
+\item Build a decision tree on  {\tt D1.txt}. Show it to us in any format (e.g., could be a standard binary tree with nodes and arrows, and denote the rule at each leaf node; or as simple as plaintext output where each line represents a node with appropriate line number pointers to child nodes; whatever is convenient for you). Again, do not visualize the data set or the tree in the x input space. In real tasks, you will not be able to visualize the whole high dimensional input space anyway, so we don’t want you to “cheat” here. 
+
+\item Look at your tree in the above format (remember, you should not visualize the 2D dataset or your tree’s decision boundary) and try to interpret the decision boundary in human understandable English. 
+
+\item Build a decision tree on {\tt D2.txt}. Show it to us. 
+\item Try to interpret your {\tt D2} decision tree. Is it easy or possible to do so without visualization? 
+\end{itemize}
+\item (Hypothesis space) [10 pts] For {\tt D1.txt} and {\tt D2.txt}, do the following separately: 
+
+\begin{itemize}
+    \item 
+ Produce a scatter plot of the data set. 
+\item Visualize your decision tree's decision boundary (or decision region, or some other ways to clearly visualize how your decision tree will make decisions in the feature space). 
+Then discuss why the size of your decision trees on {\tt D1} and {\tt D2} differ. Relate this to the hypothesis space of our decision tree algorithm. 
+\end{itemize}
+\item (Learning curve) [20 pts] We provide a data set {\tt Dbig.txt} with 10000 labeled items. Caution: {\tt Dbig.txt} is sorted. 
+\begin{itemize}
+    \item You will randomly split {\tt Dbig.txt} into a candidate training set of 8192 items and a test set (the rest). Do this by generating a random permutation, and split at 8192.
+    You should use as seed in the random generator, the last digit of your wisc-id ($\theta$). A code for this task should be the following: 
+\begin{verbatim}
+import numpy as np
+np.random.RandomState(seed=Last-Digit).permutation(n)
+\end{verbatim}
+\item Generate a sequence of five nested training sets $D_{32} \subset D_{128} \subset D_{512} \subset D_{2048} \subset D_{8192}$ from the candidate training set. The subscript $n$ in $D_n$ denotes training set size. The easiest way is to take the first $n$ items from the (same) permutation above. (Use the same seed as above).
+This sequence simulates the real world situation where you obtain more and more training data. 
+\item For each $D_n$ above, train a decision tree. Measure its test set error $\mathrm{err}_n$. Show three things in your answer: (1) List $n$, number of nodes in that tree,  $\mathrm{err}_n$. (2) Plot $n$ vs.  $\mathrm{err}_n$. This is known as a learning curve (a single plot). (3) Visualize your decision trees' decision boundary (five plots). 
+\end{itemize}
+\end{enumerate}
+\section{sklearn}
+[10 pts] Learn to use sklearn https://scikit-learn.org/stable/. Use sklearn.tree.DecisionTreeClassifier to produce trees for datasets $D_{32}, D_{128}, \ldots D_{8192}$. Show two things in your answer: (1) List $n$, number of nodes in that tree, $\mathrm{err}_n$. (2)  Plot $n$ vs.  $\mathrm{err}_n$. 
+\section{Lagrange Interpolation}
+[10 pts]
+Fix the interval $[0, 4\pi]$ and sample $n = 100$ points $x$ from this interval $(a)$ uniformly $(b)$ by drawing samples according to a Gaussian distribution with mean $\mu=2\pi-\theta \pi/10$ and standard deviation $\sigma=\pi/6$ and rejecting any sample outside the interval. Use these to build a training set consisting of $n$ pairs $(x, y)$ by setting function $y = \cos(x+\theta \pi/10)$, 
+$\theta$ is again the last digit of your id. 
+\medskip
+
+Build a model $f$ by using Lagrange interpolation, as discussed in lecture. Generate a test set using the same distribution as your test set. Compute and report the resulting model's train and test error. What do you observe?  What do you observe if you increase $\sigma$ to be $\pi/4$ and $\pi/2$?
+
+ 
+\end{document}
